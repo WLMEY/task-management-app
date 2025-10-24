@@ -1,0 +1,42 @@
+
+.Task{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: fit-content;
+    border-radius: 7px;
+    padding: 1vb 2vb;
+    gap: 10px;
+    background-color: rgb(82, 79, 76);
+    position: relative;
+    margin: 1vb;
+    max-width: 100%;
+}
+.Task:hover{
+    cursor: pointer;
+    border: 2px solid white;
+
+}
+.NegativeCheckCircle{
+width: 25px ;
+height: 25px;
+border: 1px solid white;
+border-radius: 50% ;
+/* display: block; */
+}
+.edit{
+    position: absolute;
+    top: 0px;
+    right: 0;
+}
+.PositiveCheckCircle{
+width: 25px ;
+height: 25px;
+border: 1px solid white;
+border-radius: 50% ;
+background-color: green;
+display: flex;
+align-items: center;
+justify-content:center;
+
+}
