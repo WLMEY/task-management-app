@@ -1,0 +1,24 @@
+*{
+    box-sizing: border-box;
+}
+
+
+.AddCard{
+
+}
+
+
+.AddCard{
+display: flex;
+flex-direction: row;
+justify-content: start;
+align-items: center;
+gap: 10px;
+
+padding: 1vb;
+border-radius: 12px;
+}
+.AddCard:hover{
+    cursor: pointer;
+    background-color:rgba(255, 255,255,0.25);
+}

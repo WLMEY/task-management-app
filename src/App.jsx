@@ -5,6 +5,8 @@ import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { motion } from "motion/react"
 import Task from './Projects/components/TaskUI'
+import List from './Projects/components/ListUI'
+import Board from './Projects/components/board'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -12,7 +14,9 @@ function App() {
   return (
     <>
     <div style={{maxWidth:'100%'}}>
-    <Task/>
+    {/* <Task/> */}
+    <Board/>
+
     </div>
       {/* <div>
         <a href="https://vite.dev" target="_blank">

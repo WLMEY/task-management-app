@@ -11,6 +11,8 @@
     position: relative;
     margin: 1vb;
     max-width: 100%;
+        border: 2px solid  rgb(78, 152, 152);
+
 }
 .Task:hover{
     cursor: pointer;
@@ -39,4 +41,7 @@ display: flex;
 align-items: center;
 justify-content:center;
 
+}
+.Task input:focus{
+outline:none
 }

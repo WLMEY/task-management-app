@@ -1,48 +1,78 @@
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import { wrap } from "motion";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
-const Task = () => {
-  // const data="Hallo, Mohammed Hussein kaml";
-
-  const [isActive, setIsActive] = useState(false);
+const Task = (props) => {
+  // const ds=propes
+  const inputRef = useRef(null);
+  const [isActive, setIsActive] = useState(props.Active);
   const [isEdit, setIsEdit] = useState(false);
   const [isEditOn, setIsEditOn] = useState(false);
-  const [data, setData] = useState("");
+  const [data, setData] = useState(props.Data);
+  const [key,setKey]=useState(props.key)
 
+  // Functoins 
   const clicked = () => {
     setIsActive(true);
-    console.log("mouseclicked : true");
   };
 
+
+
+  
+
+// Active Edit button
   useEffect(() => {
     console.log("isEditON : " + isEditOn);
+    inputRef.current.focus();
+    inputRef.current.select();
   }, [isEditOn]);
+//  chack click out side Input field
+  useEffect(() => {
+    function handleClickOutside(e) {
+      if (inputRef.current && !inputRef.current.contains(e.target)) {
+        return setIsEditOn(false);
+      } else {
+        return setIsEditOn(true);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+
 
   return (
+    //  Task componant
     <div
       className="Task"
       onMouseLeave={() => setIsEdit(false)}
       onMouseEnter={() => setIsEdit(true)}
+      key={key}
     >
+      {/* Edit icon */}
       <i
         style={{ display: isEdit ? "block" : "none" }}
         onClick={() => setIsEditOn(true)}
         class="fa-solid fa-pen-to-square edit"
       ></i>
+      {/* Check Circle*/}
       <div
         onClick={clicked}
         className={isActive ? "PositiveCheckCircle" : "NegativeCheckCircle"}
       >
+
         <i
           style={{ display: isActive ? "flex" : "none" }}
-          
           class="fa-solid fa-check"
         ></i>
       </div>
-      {/* <span style={{wordBreak:'break-word'}}>{data}</span> */}
+
+      {/* Input  */}
       <input
+        ref={inputRef}
+        // onFocus={!isEditOn}
         disabled={!isEditOn}
         onChange={(e) => {
           setData(e.target.value), console.log(isEditOn);

@@ -1,0 +1,46 @@
+
+.List{
+background-color: rgb(78, 152, 152);
+padding: 5px;
+border-radius: 12px;
+}
+
+
+.Title{
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+
+padding: 1.5vb;
+}
+.Title input{
+    cursor: pointer;
+}
+.Title input:focus{
+    outline: none;
+}
+.Title .icons i{
+    transform: rotate(45deg);
+}
+.Title .icons{
+
+    padding: 1vb 2vb;
+    border-radius: 8px;
+}
+.Title .icons:hover{
+    cursor: pointer;
+    background-color:rgba(255, 255,255,0.25);
+}
+
+
+.Tasks{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+
+
+
