@@ -9,7 +9,7 @@ const Task = (props) => {
   const [isEdit, setIsEdit] = useState(false);
   const [isEditOn, setIsEditOn] = useState(false);
   const [data, setData] = useState(props.Data);
-  const [key,setKey]=useState(props.key)
+  const Id=props.id
 
   // Functoins 
   const clicked = () => {
@@ -49,13 +49,13 @@ const Task = (props) => {
       className="Task"
       onMouseLeave={() => setIsEdit(false)}
       onMouseEnter={() => setIsEdit(true)}
-      key={key}
+      key={Id}
     >
       {/* Edit icon */}
       <i
         style={{ display: isEdit ? "block" : "none" }}
         onClick={() => setIsEditOn(true)}
-        class="fa-solid fa-pen-to-square edit"
+        className="fa-solid fa-pen-to-square edit"
       ></i>
       {/* Check Circle*/}
       <div
@@ -65,7 +65,7 @@ const Task = (props) => {
 
         <i
           style={{ display: isActive ? "flex" : "none" }}
-          class="fa-solid fa-check"
+          className="fa-solid fa-check"
         ></i>
       </div>
 

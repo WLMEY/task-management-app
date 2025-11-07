@@ -4,12 +4,15 @@ import List from "./ListUI";
 
 
 const Board = () => {
-    const data=useSelector(state=>state.Data.board.board1);
+    const activBoard=useSelector(state=>state.Data.ActivBoard);
+    
+    const data=useSelector(state=>state.Data.board[activBoard]);
     console.log("data Board :  ",data)
+    console.log("activboard : " ,activBoard)
     return ( <div className="Board">
 
         {
-            data.map((list, index)=><List Index={index} />)
+            data.map((list, index)=><List key={index} Index={index}/>)
         }
         
             
